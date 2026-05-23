@@ -20,3 +20,10 @@
 - What I changed before approving: Nothing, plan looked correct and all 16 tests still passed.
 - Verification: Ran .venv/bin/pytest — all 16 tests pass. Smoke tested GET / and POST /check with weak and strong passwords.
 - One thing I learned: Claude can wire a web interface onto existing functions cleanly when you tell it exactly which function to use and what not to touch.
+
+## Task 4 — Web route tests
+- Brief: Write two tests myself for the web routes.
+- What Claude proposed: Nothing — I wrote these myself.
+- What I changed before approving: Moved test file to root directory to fix import error.
+- Verification: .venv/bin/pytest test_web.py -v — both tests pass.
+- One thing I learned: pytest needs to be run from the same directory as the files it imports.
