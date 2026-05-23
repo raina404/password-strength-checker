@@ -27,3 +27,17 @@
 - What I changed before approving: Moved test file to root directory to fix import error.
 - Verification: .venv/bin/pytest test_web.py -v — both tests pass.
 - One thing I learned: pytest needs to be run from the same directory as the files it imports.
+
+## Task 5 — Manual end-to-end verification
+- Brief: Run the app and test 3 different passwords in the browser.
+- What Claude proposed: N/A — manual step.
+- What I changed before approving: N/A.
+- Verification: Ran python3 app.py, tested "abc" (red/Very Weak), "Hello1!" (amber/Fair), "K@9mVz#2Lp!wQr8&" (green/Very Strong). All showed correct colors and tips.
+- One thing I learned: The color coding makes it immediately obvious how weak most common passwords are.
+
+## Task 6 — Tag v0.1 release
+- Brief: Tag the final working commit as v0.1.
+- What Claude proposed: N/A — git command.
+- What I changed before approving: N/A.
+- Verification: git tag v0.1 exists and git push --tags succeeded.
+- One thing I learned: Tagging releases makes it easy to point someone to exactly what you shipped.
