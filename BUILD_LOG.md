@@ -41,3 +41,13 @@
 - What I changed before approving: N/A.
 - Verification: git tag v0.1 exists and git push --tags succeeded.
 - One thing I learned: Tagging releases makes it easy to point someone to exactly what you shipped.
+
+## Reflection
+
+With the agentic workflow I was able to ship a full working web app in a few hours that I would not have been able to build on my own in that time. The scoring logic, the web routes, the templates, and the tests were all created faster than I could have typed them myself. Without Claude Code I would have spent most of my time looking up syntax and debugging import errors instead of actually thinking about what I was building. The biggest time saver was that Claude already knew the patterns — I just had to describe what I wanted, review the plan, and verify the output.
+
+I did have to override Claude more than I expected. The biggest moment was when Claude tried to handle the GitHub push itself and kept failing because it could not figure out the WSL authentication setup on my machine. I knew the fix right away — just run git push manually in the terminal — but Claude kept spinning and trying to install extra tools. I also had to stop Claude early on because it built the whole project before I even got to review a plan. That taught me that plan mode is not optional. If you skip it, Claude just runs.
+
+This project showed me gaps I did not know I had. I do not fully understand how Python imports work across different folders, which is why my test file broke when I put it in a subfolder. I fixed it by moving the file to the root but I still do not know the proper way to structure it. I also realized I was relying on Claude to catch security issues I was missing myself, like the fact that the password input had no length limit. That is a problem because Claude does not always catch those things either. The only reason it got flagged was because I specifically asked chat to do a security review. If I had skipped that step the bug would have shipped. That is the gap I want to close — I want to build my own mental checklist of common security issues so I catch them before I even ask Claude.
+
+At my internship I will use this same four lane workflow on every feature. Planning in chat, executing in Claude Code, polishing with Copilot, and reviewing in chat before anything merges. On day one the first thing I will do is write a CLAUDE.md for whatever codebase I am working in. That single habit made the biggest difference in this whole cohort. Every time I gave Claude clear context and conventions upfront it worked well. Every time I skipped that step it went off track and I had to clean up the mess.
