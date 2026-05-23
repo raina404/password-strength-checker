@@ -13,3 +13,10 @@
 - What I changed before approving: Nothing — plan was already implemented before I could review it.
 - Verification: pytest passes on all 16 tests.
 - One thing I learned: Claude writes more than you ask for when given no constraints.
+
+## Task 3 — Web interface
+- Brief: Add Flask routes and HTML templates on top of the existing check_strength() function.
+- What Claude proposed: app.py with GET / and POST /check routes, index.html form, result.html with color-coded score and tips.
+- What I changed before approving: Nothing, plan looked correct and all 16 tests still passed.
+- Verification: Ran .venv/bin/pytest — all 16 tests pass. Smoke tested GET / and POST /check with weak and strong passwords.
+- One thing I learned: Claude can wire a web interface onto existing functions cleanly when you tell it exactly which function to use and what not to touch.
